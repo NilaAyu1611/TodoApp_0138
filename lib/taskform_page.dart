@@ -110,7 +110,18 @@ class _TaskFormPageState extends State<TaskFormPage> {
                 ),
 
               ],
-            )
+            ),
+            const SizedBox(height: 10),
+
+            // Inputan untuk nama tugas
+            TextField(
+              controller: _taskController,
+              decoration: InputDecoration(
+                labelText: 'Task Name',
+                hintText: 'Enter task name',
+                border: const OutlineInputBorder(),
+              ),
+            ),
           ]
         ),
         
