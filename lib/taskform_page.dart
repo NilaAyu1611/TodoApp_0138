@@ -142,6 +142,30 @@ class _TaskFormPageState extends State<TaskFormPage> {
             ),
             const SizedBox(height: 20),
             const Text('List Tasks', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+
+             // Daftar tugas yang ditampilkan dalam bentuk ListView
+            Expanded(
+              child: ListView.builder(
+                itemCount: _tasks.length,    // Jumlah tugas dalam daftar
+                itemBuilder: (context, index) {
+                  return Card(
+                    color: const Color.fromARGB(134, 247, 244, 239),
+                    margin: const EdgeInsets.symmetric(vertical: 5),
+                    child: ListTile(
+                      title: Text(_tasks[index]['name'], style: const TextStyle(fontWeight: FontWeight.bold)),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          
+                        ],
+                      ),
+
+                      
+                    ),
+                  );
+                },
+              ),
+            ),
           ]
         ),
         
