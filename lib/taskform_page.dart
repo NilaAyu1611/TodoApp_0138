@@ -140,6 +140,8 @@ class _TaskFormPageState extends State<TaskFormPage> {
               ),
               child: const Text('Submit', style: TextStyle(color: Colors.white)),
             ),
+            const SizedBox(height: 20),
+            const Text('List Tasks', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           ]
         ),
         
