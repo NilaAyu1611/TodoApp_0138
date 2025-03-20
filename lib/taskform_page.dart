@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';        // Package untuk memformat tanggal dan waktu
 
 class TaskFormPage extends StatefulWidget {
   const TaskFormPage ({super.key});
@@ -92,7 +93,22 @@ class _TaskFormPageState extends State<TaskFormPage> {
             const Text('Task Date & Time:', style: TextStyle(fontSize: 18)),
             Row(
               children: [
-                Expanded(child: Text())
+                Expanded(
+                  child: Text(
+                    _selectedDateTime == null
+                        ? 'Select a date and time'
+                        : DateFormat('dd-MM-yyyy HH:mm').format(_selectedDateTime!),
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: _selectedDateTime == null ? Colors.red : Colors.black,
+                    ),
+                  ),
+                  ),
+                  IconButton(
+                  icon: const Icon(Icons.calendar_today, color: Color.fromARGB(255, 23, 84, 134)),
+                  onPressed: () => _selectDateTime(context),
+                ),
+
               ],
             )
           ]
