@@ -122,6 +122,16 @@ class _TaskFormPageState extends State<TaskFormPage> {
                 border: const OutlineInputBorder(),
               ),
             ),
+
+            // Pesan error jika inputan kosong
+            if (_showError) 
+              const Padding(
+                padding: EdgeInsets.only(top: 5),
+                child: Text(
+                  'Task name cannot be empty!',
+                  style: TextStyle(color: Colors.red, fontSize: 14),
+                ),
+              ),
           ]
         ),
         
