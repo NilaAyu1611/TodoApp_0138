@@ -13,6 +13,17 @@ class _TaskFormPageState extends State<TaskFormPage> {
    final List<Map<String, dynamic>> _tasks = [];
    bool _showError = false;
 
+  @override
+  void initState() {
+    super.initState();
+    // Listener untuk mengecek apakah inputan kosong atau tidak
+    _taskController.addListener(() {
+      setState(() {
+        _showError = _taskController.text.isEmpty;
+      });
+    });
+  }
+
    
     // Fungsi untuk memilih tanggal dan waktu
   Future<void> _selectDateTime(BuildContext context) async {
@@ -55,9 +66,13 @@ class _TaskFormPageState extends State<TaskFormPage> {
         });
         _taskController.clear();
         _selectedDateTime = null;
-        
+        _showError = false;
       });
-    } 
+    } else{
+      setState(() {
+        _showError = true;    // Menampilkan pesan error jika input kosong
+      });
+    }
     }
   
 
