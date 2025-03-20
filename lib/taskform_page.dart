@@ -167,7 +167,15 @@ class _TaskFormPageState extends State<TaskFormPage> {
                         ],
                       ),
 
-                      
+                      // Checkbox untuk mengubah status tugas selesai/belum
+                      trailing: Checkbox(
+                        value: _tasks[index]['done'],
+                        onChanged: (bool? value) {
+                          setState(() {
+                            _tasks[index]['done'] = value!;
+                          });
+                        },
+                      ),                      
                     ),
                   );
                 },
