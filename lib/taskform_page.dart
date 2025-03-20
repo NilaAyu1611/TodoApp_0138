@@ -156,7 +156,14 @@ class _TaskFormPageState extends State<TaskFormPage> {
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          
+                          Text(
+                            'Deadline: ${DateFormat('dd-MM-yyyy HH:mm').format(_tasks[index]['date'])}',
+                            style: const TextStyle(color: Colors.blueGrey),
+                          ),
+                          Text(
+                            _tasks[index]['done'] ? 'Done' : 'Not Done',
+                            style: TextStyle(color: _tasks[index]['done'] ? const Color.fromARGB(255, 34, 189, 39) : Colors.red),
+                          ),
                         ],
                       ),
 
