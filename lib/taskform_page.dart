@@ -29,6 +29,19 @@ class _TaskFormPageState extends State<TaskFormPage> {
       context: context,
       initialTime: TimeOfDay.now(),
     );
+
+    if (pickedTime == null || !mounted) return;
+
+     // Menyimpan tanggal dan waktu yang dipilih
+    setState(() {
+      _selectedDateTime = DateTime(
+        pickedDate.year,
+        pickedDate.month,
+        pickedDate.day,
+        pickedTime.hour,
+        pickedTime.minute,
+      );
+    });
     
   }
 
