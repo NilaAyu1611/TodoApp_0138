@@ -45,6 +45,22 @@ class _TaskFormPageState extends State<TaskFormPage> {
     
   }
 
+   void _addTask() {
+    if (_taskController.text.isNotEmpty && _selectedDateTime != null) {
+      setState(() {
+        _tasks.add({
+          'name': _taskController.text,
+          'date': _selectedDateTime!,
+          'done': false,
+        });
+        _taskController.clear();
+        _selectedDateTime = null;
+        
+      });
+    } 
+    }
+  
+
 
   @override
   Widget build(BuildContext context) {
