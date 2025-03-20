@@ -8,6 +8,7 @@ class TaskFormPage extends StatefulWidget {
 }
 
 class _TaskFormPageState extends State<TaskFormPage> {
+  final TextEditingController _taskController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +22,11 @@ class _TaskFormPageState extends State<TaskFormPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text('Task Date & Time:', style: TextStyle(fontSize: 18)),
+            Row(
+              children: [
+                Expanded(child: Text())
+              ],
+            )
           ]
         ),
         
