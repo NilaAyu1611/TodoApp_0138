@@ -132,6 +132,14 @@ class _TaskFormPageState extends State<TaskFormPage> {
                   style: TextStyle(color: Colors.red, fontSize: 14),
                 ),
               ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: _addTask,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 95, 103, 15),
+              ),
+              child: const Text('Submit', style: TextStyle(color: Colors.white)),
+            ),
           ]
         ),
         
