@@ -81,9 +81,11 @@ class _TaskFormPageState extends State<TaskFormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(95, 171, 168, 125),
       appBar: AppBar(
         title: const Text("Form Page"),
         centerTitle: true,
+        backgroundColor: const Color.fromARGB(172, 21, 87, 6),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
