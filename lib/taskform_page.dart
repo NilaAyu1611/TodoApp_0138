@@ -13,6 +13,26 @@ class _TaskFormPageState extends State<TaskFormPage> {
    final List<Map<String, dynamic>> _tasks = [];
    bool _showError = false;
 
+   
+    // Fungsi untuk memilih tanggal dan waktu
+  Future<void> _selectDateTime(BuildContext context) async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+
+    if (pickedDate == null || !mounted) return;
+
+    TimeOfDay? pickedTime = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+    
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
